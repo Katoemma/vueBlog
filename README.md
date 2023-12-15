@@ -15,10 +15,11 @@ This project is a blog platform built using Vue.js, Tailwind CSS, custom PHP, an
 ## Tools and Technologies Used
 
 - **Vue.js** ![Vue.js Logo](https://vuejs.org/images/logo.png)
-- **Tailwind CSS** ![Tailwind CSS Logo](https://tailwindcss.com/favicon-32x32.png)
-- **XAMPP** ![XAMPP Logo](https://www.apachefriends.org/favicon-32x32.png)
-- **Axios** (Add Axios logo if available)
-- **MySQL** (Add MySQL logo if available)
+- **Tailwind CSS** ![Tailwind CSS Logo](https://stackdiary.com/wp-content/uploads/2022/10/Tailwind-CSS-15-Component-Libraries-UI-Kits.png)
+- **XAMPP** ![XAMPP Logo](https://w7.pngwing.com/pngs/952/732/png-transparent-xampp-full-logo-tech-companies-thumbnail.png)
+- **Axios** ![Axios Logo](https://www.clipartmax.com/png/middle/160-1605409_axios-logo.png)
+- **PHP** ![PHP logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png)
+- **MySQL** ![MySQL logo](https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png)
 
 ## Installation
 
