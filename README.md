@@ -15,11 +15,11 @@ This project is a blog platform built using Vue.js, Tailwind CSS, custom PHP, an
 ## Tools and Technologies Used
 
 - **Vue.js** ![Vue.js Logo](https://vuejs.org/images/logo.png)
-- **Tailwind CSS** ![Tailwind CSS Logo](https://stackdiary.com/wp-content/uploads/2022/10/Tailwind-CSS-15-Component-Libraries-UI-Kits.png)
-- **XAMPP** ![XAMPP Logo](https://w7.pngwing.com/pngs/952/732/png-transparent-xampp-full-logo-tech-companies-thumbnail.png)
-- **Axios** ![Axios Logo](https://www.clipartmax.com/png/middle/160-1605409_axios-logo.png)
-- **PHP** ![PHP logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png)
-- **MySQL** ![MySQL logo](https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png)
+- **Tailwind CSS** <img src="https://stackdiary.com/wp-content/uploads/2022/10/Tailwind-CSS-15-Component-Libraries-UI-Kits.png" width="100" height="100" alt="tailwindcss logo">
+- **XAMPP** <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/XAMPP_logo.svg/1200px-XAMPP_logo.svg.png" height="100" width="200" alt="xamp logo">
+- **Axios** <img src="https://assets-global.website-files.com/5e19ea5aa7d3a217492e372b/624de949df5a11680ab170b9_Axios%20logo%20-%20RGB%20-%20minimum%20space.png" width="200" alt="axios logo">
+- **PHP** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png" width="100" alt="PHP logo">
+- **MySQL** <img src="https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png" width="200" alt="mysql logo">
 
 ## Installation
 
