@@ -1,14 +1,19 @@
 <?php
- 
-    $conn = new mysqli("localhost", "root", "", "db_sistem_informasi");
+    define('DB_HOST','localhost');
+    define('DB_USER','root');
+    define('DB_PASS','');
+    define('DB_NAME','bloggydb');
 
-    $msg="";
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME)
+    or die("database has failed to load: ".mysqli_error($conn));
 
+    $msg ='';
     if($conn){
-        $msg = "Database Connected successfully";
+        $msg = 'database connection successful';
     }else{
-        $msg = "Database Connection failed".$conn->connect_error;
+        $msg = 'database connection failed';
     }
 
-    json_encode($$msg);
+    //encode the message as json for axios
+    echo json_encode($msg);
 ?>

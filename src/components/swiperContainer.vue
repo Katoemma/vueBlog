@@ -7,20 +7,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
-const onSwiper = (swiper) => {
-  console.log(swiper);
-};
-
-const onSlideChange = () => {
-  console.log('slide change');
-};
 
 const modules = [Navigation, Pagination, Scrollbar, A11y, Autoplay];
 </script>
 
 <template>
     
-    <Swiper :modules="modules" :slides-per-view="3" :space-between="50"  :pagination="{ clickable: true }" loop :autoplay="{ delay: 2500, disableOnInteraction: false }"  @swiper="onSwiper" @slideChange="onSlideChange">
+    <Swiper :modules="modules" :slides-per-view="3" :space-between="50"  :pagination="{ clickable: true }" loop :autoplay="{ delay: 2500, disableOnInteraction: false }"   >
         <SwiperSlide v-for="i in 10" :key="i" class="bg-white shadow-lg rounded-lg overflow-hidden ml-2">
             <img src="https://blog.hootsuite.com/wp-content/uploads/2022/06/best-time-to-post-on-instagram-556x556.png" class="w-full h-60" alt="">
             <div class="p-4">

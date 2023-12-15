@@ -3,7 +3,7 @@ import router from '@/router';
 </script>
 <template>
     <!-- blog website navbar -->
-    <nav class="sticky top-0 p-2 bg-red-500 mx-auto">
+    <nav class="sticky top-0 p-2 bg-red-500 mx-auto z-50">
         <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- logo -->
             <img src="https://png.pngtree.com/element_pic/00/16/07/06577d261edb9ec.jpg" class="w-12 rounded-lg" alt="">
