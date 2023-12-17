@@ -1,13 +1,11 @@
 <?php
 
-$basePath = dirname(__DIR__); // The base path of the project
-include $basePath . '/database/db.php';
-include $basePath . '/helpers/validatePost.php';
+include './db.php';
 
 $table = 'post';//initialise the table
 $topics = selectAll('topics');
 $posts = selectAll($table);
-$response = array('error' => false);
+$response = array();
 
 $action ='';
 
@@ -15,9 +13,12 @@ if (isset($_GET['action'])){
     $action = $_GET['action'];
 }
 
+if($action == 'posts'){
+    $response['posts'] = $posts;
+}
 if($action == 'login'){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_GET['email'];
+    $password = $_GET['password'];
 
     $response['message'] = $username." ".$password;
 }

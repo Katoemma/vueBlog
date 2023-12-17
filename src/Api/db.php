@@ -161,7 +161,9 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
     header('Access-Control-Allow-Credentials: true');
 }
 
-// Handling preflight requests
+// For handling preflight requests and CORS
+$allowedOrigin = "*";
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Access-Control-Allow-Origin: ' . $allowedOrigin);
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -170,16 +172,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-
-
-
-// Your PHP code goes here
-// For example, handling a POST request
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Process POST request data
-    // ...
-    // Send response
-    echo json_encode(['message' => 'Data received successfully']);
-}
 
 ?>

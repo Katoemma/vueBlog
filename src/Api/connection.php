@@ -15,5 +15,4 @@
     }
 
     //encode the message as json for axios
-    echo json_encode($msg);
 ?>

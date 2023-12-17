@@ -6,18 +6,18 @@ const data = ref([]);
 const email = ref('');
 const password = ref('');
 
-function submit() {
-    axios.post("http://localhost/vueBlog/src/Api/posts.php?action=login", {
+const submit = () => {
+    axios.post("http://localhost/vueBlog/src/Api/users.php?action=login", {
         email: email.value,
         password: password.value
     })
-        .then(response => {
-            if(!response.data.success){
-                alert("not able to retrievw");
-            }
-            data.value = response.data;
-        })
-        .catch(err => console.log(err));
+    .then(response => {
+        data.value = response.data;
+    })
+    .catch(err => {
+        console.error(err);
+        // Add error handling logic to inform the user about the error.
+    });
 }
 
 </script>
