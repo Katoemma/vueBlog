@@ -30,12 +30,12 @@ if (isset($_GET['action'])){
     $action = $_GET['action'];
 }
 
-if($action == 'login'){
+if(isset($_GET['login'])){
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM $table WHERE email = '$email'";
+    $query = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $response = array();

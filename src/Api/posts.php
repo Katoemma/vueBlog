@@ -14,18 +14,15 @@ if (isset($_GET['action'])){
 }
 
 if($action == 'posts'){
-    $response['posts'] = $posts;
+    $response = $posts;
 }
 if($action == 'login'){
-    $username = $_GET['email'];
-    $password = $_GET['password'];
-
-    $response['message'] = $username." ".$password;
+   $response = $posts;
 }
 
 
 header('Content-Type: application/json');
-echo json_encode($response);
+echo json_encode($posts);
 
 ?>
 
