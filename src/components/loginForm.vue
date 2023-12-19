@@ -33,7 +33,8 @@ const login = async () => {
 
 watch(data, () =>{
     if(data.value.token){
-        router.push('/');
+        router.push('/dashboard');
+        toast.success("You have been logged in!");
     }
 }
 
