@@ -8,7 +8,7 @@ const router = useRouter();
 const toast = useToast();
 
 
-const data = ref([]);
+const user = ref([]);
 const email = ref('');
 const password = ref('');
 
@@ -22,7 +22,7 @@ const login = async () => {
         });
 
         console.log(response.data);
-        data.value = response.data;
+        user.value = response.data;
 
 
     } catch (error) {
@@ -31,14 +31,14 @@ const login = async () => {
    
 };
 
-watch(data, () =>{
-    if(data.value.token){
-        router.push('/dashboard');
-        toast.success("You have been logged in!");
+watch(user, () =>{
+    if(user.value.token){
+        if(user.value.admin = 1){
+            router.push('/dashboard');
+            toast.success("You have been logged in!");
+        }
     }
-}
-
-)
+})
 
 </script>
 <template>
