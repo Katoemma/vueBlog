@@ -1,6 +1,6 @@
 <?php
 
-include './db.php';
+include 'axios.php';
 
 $table = 'post';//initialise the table
 $topics = selectAll('topics');
@@ -15,9 +15,6 @@ if (isset($_GET['action'])){
 
 if($action == 'posts'){
     $response = $posts;
-}
-if($action == 'login'){
-   $response = $posts;
 }
 
 

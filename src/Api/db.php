@@ -150,16 +150,4 @@ function getPostByTopic($topic_id)
 
 
 
-// Allow from any origin
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-    // Decide if the origin in $_SERVER['HTTP_ORIGIN'] is one
-    // you want to allow, and if so, set it in $allowedOrigin
-    $allowedOrigin = "*";
-    header('Access-Control-Allow-Origin: ' . $allowedOrigin);
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type, Authorization');
-    header('Access-Control-Allow-Credentials: true');
-}
-
-
 ?>

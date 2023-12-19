@@ -1,52 +1,41 @@
 <?php
+    include 'axios.php';
 
-include './connection.php';
+if(isset($_GET['action']) && $_GET['action'] == 'login'){
 
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-	// Decide if the origin in $_SERVER['HTTP_ORIGIN'] is one
-	// you want to allow, and if so:
-	header('Access-Control-Allow-Origin: *');
-	header('Access-Control-Allow-Credentials: true');
-	header('Access-Control-Max-Age: 1000');
+
+// Fetch POST data from Vue frontend
+$data = json_decode(file_get_contents("php://input"));
+
+$email = $data->email;
+$password = $data->password;
+
+
+
+// Perform a query to check user credentials (ensure to hash passwords properly in your database)
+$sql = "SELECT * FROM users WHERE email = '$email'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // User found, login successful
+    $user = $result->fetch_assoc();
+
+    $verifyPass = password_verify($password, $user['password']);
+    if ($verifyPass) {
+        //add token
+        $token = bin2hex(random_bytes(50));
+        $user['token'] = $token;
+        echo json_encode($user);
+    }else{
+        echo json_encode(array("message" => "Invalid credentials"));
+    }
+
+} else {
+    // Invalid credentials
+    http_response_code(401);
+    echo json_encode(array("message" => "Invalid credentials"));
 }
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-	if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
-			// may also be using PUT, PATCH, HEAD etc
-			header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-	}
-
-	if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
-			header("Access-Control-Allow-Headers: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization");
-	}
-	exit(0);
-}
-
-
-$response = array();
-
-$action ='';
-
-if (isset($_GET['action'])){
-    $action = $_GET['action'];
-}
-
-if(isset($_GET['login'])){
-
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($result);
-    $response = array();
-    if($row){
-        $response['status'] = 'success';
-        $response['message'] = 'Login Successful';
-        $response['user'] = $row;
-    };
 }
 
-header('Content-Type: application/json');
-echo json_encode($response);
-
+$conn->close();
 ?>

@@ -7,7 +7,7 @@ import axios from 'axios';
 const posts = ref([]);
 
 let fetchPosts = ()=>{
-    axios.post('http://localhost/vueBlog/src/Api/posts.php')
+    axios.post('http://localhost/vueBlog/src/Api/posts.php?action=posts')
         .then(
             response => {
                 console.log(response.data);

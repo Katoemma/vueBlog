@@ -1,8 +1,10 @@
 <script setup>
 import axios from 'axios';
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
+import { useRouter } from "vue-router";
 import { useToast } from "vue-toastification";
 
+const router = useRouter();
 const toast = useToast();
 
 
@@ -10,11 +12,11 @@ const data = ref([]);
 const email = ref('');
 const password = ref('');
 
-var credentials;
+var credentials = ref();
 
 const login = async () => {
     try {
-        const response = await axios.post("http://localhost/vueBlog/src/Api/login.php", {
+        const response = await axios.post("http://localhost/vueBlog/src/Api/users.php?action=login", {
             email: email.value,
             password: password.value,
         });
@@ -22,17 +24,20 @@ const login = async () => {
         console.log(response.data);
         data.value = response.data;
 
+
     } catch (error) {
         console.error("Axios Error:", error);
     }
-    //check the data is message:wrongcredentials
    
 };
-if(data.value.message === "Invalid credentials"){
-        credentials = true;
-        }else{
-        credentials = false;
+
+watch(data, () =>{
+    if(data.value.token){
+        router.push('/');
     }
+}
+
+)
 
 </script>
 <template>
